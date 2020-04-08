@@ -1,0 +1,30 @@
+{
+  "name": "hapi-js-backend",
+  "version": "1.0.0",
+  "description": "Hapi.js basic server",
+  "main": "hapi.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pullmana8/hapi-project.git"
+  },
+  "keywords": [
+    "hapi",
+    "typescript",
+    "cloud"
+  ],
+  "author": "Antonette Caldwell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pullmana8/hapi-project/issues"
+  },
+  "homepage": "https://github.com/pullmana8/hapi-project#readme",
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1"
+  },
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}
