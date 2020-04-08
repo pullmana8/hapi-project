@@ -1,14 +1,14 @@
 import { Server, Request, ResponseToolkit } from '@hapi/hapi';
 
 const init = async () => {
-    
-    // Create server on port 3000
+
+    // Create server on port 8082
     const server: Server = new Server({
-        port: 3000,
-        host: 'localhost'
+        port: 8082,
+        host: 'localhost',
     });
 
-    // Get route
+    // Root URI Call
     server.route({
         method: 'GET',
         path: '/',
@@ -16,6 +16,46 @@ const init = async () => {
             return 'Welcome to the cloud!';
         }
     });
+
+    // Get a greeting to a specific person
+    // to demonstrate request.params
+    // > try it {{host}}/persons/:the_name
+    server.route({
+        method: 'GET',
+        path: '/persons/{name?}',
+        handler: function (request, h) {
+
+            const name = request.params.name ? request.params.name : 'stranger';
+
+            if (request.params.name) {
+                return `Welcome to the cloud, ${name}!`
+            } else {
+                return 'Your name is required, stranger.'
+            }
+        }
+    });
+
+    // Get a greeting to a specific person
+    // to demonstrate request.query
+    // > try it {{host}}/persons?name=the_name
+    server.route({
+        method: 'GET',
+        path: '/persons/',
+        handler: function (request, h) {
+
+            // @TODO
+        }
+
+    });
+
+    // Post a greeting to a specific person
+    server.route({
+        method: 'POST',
+        path: '/persons',
+        handler: function (request, h) {
+
+        }
+    })
 
     await server.start();
     console.log('Server running on %s', server.info.uri);
