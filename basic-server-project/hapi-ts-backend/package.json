@@ -1,0 +1,14 @@
+{
+  "name": "hapi-ts-backend",
+  "version": "1.0.0",
+  "description": "Hapi/Typescript backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Antonette Caldwell",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1"
+  }
+}
