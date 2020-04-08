@@ -1,4 +1,4 @@
-const Hapi = require('@hapi/hapi);
+const Hapi = require('@hapi/hapi'); // Fixed typo, was missing ; and '
 
 const init = async () => {
 	
@@ -13,7 +13,7 @@ const init = async () => {
 	server.route({
 		path: '/',
 		method: 'GET',
-		handler: (request, h) +> {
+		handler: (request, h) => {
 			return 'Welcome to the Cloud!';
 		}
 	});
@@ -57,7 +57,12 @@ const init = async () => {
 	
 	// Start server
 	await server.start();
-	console.log('Server running on port 3000');
+	console.log('Server running on %s', server.info.uri); // Fixed this line to copy from Hapi tutorial
 };
+
+process.on('unhandledRejection', (err) => {
+	console.log(err);
+	process.exit(1);
+});
 
 init();
