@@ -2,8 +2,11 @@
   "name": "hapi-ts-backend",
   "version": "1.0.0",
   "description": "Hapi/Typescript backend",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
+    "start": "node .",
+    "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
+    "prod": "tsc && node ./www/server.js",
     "test": "jest"
   },
   "author": "Antonette Caldwell",
@@ -14,6 +17,7 @@
   "devDependencies": {
     "@types/hapi__hapi": "^19.0.2",
     "@types/node": "^13.11.1",
+    "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.8.3"
   }
 }
