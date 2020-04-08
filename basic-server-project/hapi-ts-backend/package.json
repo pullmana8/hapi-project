@@ -12,7 +12,9 @@
   "author": "Antonette Caldwell",
   "license": "ISC",
   "dependencies": {
-    "@hapi/hapi": "^19.1.1"
+    "@hapi/hapi": "^19.1.1",
+    "@types/qs": "^6.9.1",
+    "qs": "^6.9.3"
   },
   "devDependencies": {
     "@types/hapi__hapi": "^19.0.2",
