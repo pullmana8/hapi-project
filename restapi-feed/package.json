@@ -1,0 +1,19 @@
+{
+  "name": "restapi-feed",
+  "version": "1.0.0",
+  "description": "Hapi Rest API backend for Ionic client, utilizing Feed service",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Antonette Caldwell",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bluebird": "^3.5.30",
+    "@types/hapi__hapi": "^19.0.2",
+    "@types/node": "^13.11.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "tslint": "^6.1.1",
+    "typescript": "^3.8.3"
+  }
+}
