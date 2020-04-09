@@ -13,16 +13,16 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/hapi": "^19.1.1",
-    "@types/bluebird": "^3.5.30",
-    "@types/qs": "^6.9.1",
-    "qs": "^6.9.3",
-    "tslint": "^6.1.1"
+    "qs": "^6.9.3"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.30",
     "@types/hapi__hapi": "^19.0.2",
     "@types/node": "^13.11.1",
+    "@types/qs": "^6.9.1",
     "prettier": "2.0.4",
     "ts-node-dev": "^1.0.0-pre.44",
+    "tslint": "^6.1.1",
     "typescript": "^3.8.3"
   }
 }
