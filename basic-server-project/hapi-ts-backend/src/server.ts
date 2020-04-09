@@ -1,3 +1,5 @@
+'use strict'
+
 import { Server, Request, ResponseToolkit } from '@hapi/hapi'
 
 const init = async () => {
@@ -39,8 +41,14 @@ const init = async () => {
   server.route({
     method: 'GET',
     path: '/persons/',
-    handler: (request, h) => {
-      // @TODO
+    handler: function (request, h) {
+      const name = request.query
+
+      if (!name) {
+        return h.response(`Your name is required, stranger`).code(400)
+      } else {
+        return h.response(`Welcome to the cloud, ${name}!`).code(200)
+      }
     }
   })
 
