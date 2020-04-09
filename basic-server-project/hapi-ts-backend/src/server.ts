@@ -13,7 +13,7 @@ const init = async () => {
         method: 'GET',
         path: '/',
         handler: (request: Request, h: ResponseToolkit) => {
-            return 'Welcome to the cloud!';
+            return h.response('Welcome to the cloud!').code(200);
         }
     });
 
@@ -28,9 +28,9 @@ const init = async () => {
             const name = request.params.name ? request.params.name : 'stranger';
 
             if (request.params.name) {
-                return `Welcome to the cloud, ${name}!`
+                return h.response('Welcome to the cloud, ${name}!').code(200);
             } else {
-                return 'Your name is required, stranger.'
+                return h.response('Your name is required, stranger.').code(400);
             }
         }
     });
@@ -42,7 +42,6 @@ const init = async () => {
         method: 'GET',
         path: '/persons/',
         handler: function (request, h) {
-
             // @TODO
         }
 
@@ -53,9 +52,18 @@ const init = async () => {
         method: 'POST',
         path: '/persons',
         handler: function (request, h) {
-
-        }
-    })
+            
+            // @TODO
+            const name = request.params.name
+			
+            if (request.payload && request.payload.name) {
+                let (!name) {
+					return h.response(`Name is required`).code(400);
+					} else {
+						return h.response('Welcome to the cloud, ${name}!`).code(200);
+					}
+		}}
+	});
 
     await server.start();
     console.log('Server running on %s', server.info.uri);
